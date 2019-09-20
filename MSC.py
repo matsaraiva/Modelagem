@@ -4,12 +4,12 @@ import os
 matriz = []
 
 def main():
-    print("hello")
-    print(gerar_mapa(4, 4))
+    gerar_mapa(4, 4)
     gerar_paredes()
     snake(1, 1)
     prey(2, 2)
     move()
+    mostrar(4, 4)
 
 def gerar_mapa (n_linhas, n_colunas):
 
@@ -21,12 +21,12 @@ def gerar_mapa (n_linhas, n_colunas):
 def snake(x, y):
     matriz[x][y] = 2
     
-    print(matriz)
+    mostrar(4, 4)
 
 def prey(x, y):
     matriz[x][y] = 3
     
-    print(matriz)
+    mostrar(4, 4)
 
 def gerar_paredes():
 
@@ -46,7 +46,7 @@ def gerar_paredes():
     matriz[3][2] = 1
     matriz[3][3] = 1
 
-    print(matriz)
+    mostrar(4, 4)
 
 def move():
     r = random.randrange(0, 3)
@@ -57,10 +57,23 @@ def move():
     elif r == 2:
         matriz[1][1] = 0
         matriz[1][2] = 2
-    else
+    else:
         matriz[1][1] = 0
         matriz[0][1] = 2
 
-    print(matriz)
+    mostrar(4, 4)
+
+def mostrar(linhas, colunas):
+
+    for i in range(linhas):
+        print("\n")
+        for j in range(colunas):
+          print(matriz[i][j], "  ", end = '')
+  
+    input("\nAperte enter para continuar")
+    clear()
+
+def clear():
+    os.system('cls' if os.name=='nt' else 'clear')
 
 main()
