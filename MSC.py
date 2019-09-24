@@ -1,5 +1,6 @@
 import random
 import os
+import time
 
 matriz = []
 direcao = (random.randrange(0, 3)) #0:norte 1:leste 2:sul 3:oeste
@@ -100,7 +101,8 @@ def mostrar(linhas, colunas):
         for j in range(colunas):
           print(matriz[i][j], "  ", end = '')
   
-    input("\nAperte enter para continuar")
+    print(" ")
+    time.sleep(2)
     clear()
 
 def defeat():
