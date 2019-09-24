@@ -6,14 +6,14 @@ direcao = (random.randrange(0, 3)) #0:norte 1:leste 2:sul 3:oeste
 
 
 def main():
-    pi = random.randrange(2, 13)
-    pj = random.randrange(2, 19)
+    pi = random.randrange(2, 5)
+    pj = random.randrange(2, 12)
     live = 1
 
-    gerar_mapa(15, 21)
-    gerar_paredes(15, 21)
+    gerar_mapa(7, 14)
+    gerar_paredes(7, 14)
     snake(pi, pj)
-    prey(random.randrange(2, 13), random.randrange(2, 19))
+    prey(random.randrange(2, 5), random.randrange(2, 12))
     while live == 1:
         pi, pj, live = move(pi, pj, live)
     defeat()
@@ -28,12 +28,12 @@ def gerar_mapa (n_linhas, n_colunas):
 def snake(x, y):
     matriz[x][y] = 2
     
-    mostrar(15, 21)
+    mostrar(7, 14)
 
 def prey(x, y):
     matriz[x][y] = 3
     
-    mostrar(15, 21)
+    mostrar(7, 14)
 
 def gerar_paredes(n_linhas, n_colunas):
 
@@ -45,7 +45,7 @@ def gerar_paredes(n_linhas, n_colunas):
         matriz[i + 1][0] = 1                #parede esquerda
         matriz[i + 1][n_colunas - 1] = 1    #parede direita
 
-    mostrar(15, 21)
+    mostrar(7, 14)
 
 def move(pit,pjt, live):
     r = random.randrange(0, 2)
@@ -89,7 +89,7 @@ def move(pit,pjt, live):
         live = 0
 
     matriz[pit][pjt] = 2
-    mostrar(15, 21)
+    mostrar(7, 14)
 
     return pit, pjt, live
 
