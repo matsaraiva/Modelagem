@@ -102,7 +102,7 @@ def mostrar(linhas, colunas):
           print(matriz[i][j], "  ", end = '')
   
     print(" ")
-    time.sleep(2)
+    time.sleep(1)
     clear()
 
 def defeat():
